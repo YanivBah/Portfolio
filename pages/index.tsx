@@ -1,8 +1,13 @@
 import Head from "next/head";
+import { useDispatch } from "react-redux";
 import Hero from "../components/Hero/Hero";
 import Navbar from "../components/Navbar/Navbar";
+import { LanguageLocale } from "../config/constants";
+import { setLanguage } from "../redux/actions/language";
 
 export default function Home() {
+  const dispatch = useDispatch();
+
   return (
     <>
       <Head>
@@ -11,9 +16,12 @@ export default function Home() {
       </Head>
 
       <Navbar />
-      <Hero />
-      <main>
-      </main>
+      {/* <Hero /> */}
+
+      <button onClick={() => dispatch(setLanguage(LanguageLocale.Hebrew))}>
+        Click Me To Test
+      </button>
+      <main></main>
 
       <footer></footer>
     </>

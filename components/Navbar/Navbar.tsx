@@ -1,9 +1,11 @@
 import { NavbarContainer, Links, ATag, CurrentATag } from "./Navbar.styles";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import useConstants from "../../hooks/useConstants";
 
 export default function Navbar() {
   const router = useRouter();
+  const { navbar } = useConstants();
 
   // Different component style if its a current page or not
   const isCurrentPage = (path: string, linkName: string) => {
@@ -18,19 +20,19 @@ export default function Navbar() {
     <NavbarContainer>
       <Links>
         <Link href="/" passHref={true}>
-          {isCurrentPage("/", "Home")}
+          {isCurrentPage("/", navbar.HOME)}
         </Link>
 
         <Link href="/articles" passHref={true}>
-          {isCurrentPage("/articles", "Articles")}
+          {isCurrentPage("/articles", navbar.ARTICLES)}
         </Link>
 
         <Link href="/projects" passHref={true}>
-          {isCurrentPage("/projects", "Projects")}
+          {isCurrentPage("/projects", navbar.PROJECTS)}
         </Link>
 
         <Link href="/me" passHref={true}>
-          {isCurrentPage("/me", "About Me")}
+          {isCurrentPage("/me", navbar.ME)}
         </Link>
       </Links>
     </NavbarContainer>

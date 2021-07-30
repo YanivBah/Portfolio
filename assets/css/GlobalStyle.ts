@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { LanguageLocale } from "../../config/constants";
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -185,19 +186,24 @@ const baseTheme = {
   },
 }
 
-
-const theme = {
+const ltrTheme = {
   ...baseTheme,
   flex: {
     direction: "row"
   }
 };
 
-const hebrewTheme = {
+const rtlTheme = {
   ...baseTheme,
   flex: {
     direction: "row-reverse"
   }
 }
 
-export { GlobalStyle, theme, hebrewTheme };
+const theme = (languageLocale: LanguageLocale) => {
+  if (languageLocale === LanguageLocale.Hebrew) return rtlTheme;
+  return ltrTheme;
+}
+
+
+export { GlobalStyle, theme };

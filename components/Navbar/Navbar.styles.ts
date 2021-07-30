@@ -25,7 +25,7 @@ export const ATag = styled.a`
   color: ${(props) => props.theme.colors.typography};
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -43,7 +43,7 @@ export const ATag = styled.a`
 `;
 
 export const CurrentATag = styled.a`
-font-size: 18px;
+  font-size: 18px;
   margin: 4px 15px;
   text-decoration: none;
   position: relative;
@@ -52,7 +52,7 @@ font-size: 18px;
   font-weight: 600;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -67,4 +67,4 @@ font-size: 18px;
     width: 100%;
     opacity: 100%;
   }
-`
+`;
