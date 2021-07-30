@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: inherit
 }
 
 html {
@@ -179,7 +180,8 @@ template {
 
 const theme = {
   colors: {
-    primary: "#fafafa",
+    primary: "#72BDA3",
+    typography: "#2e3440"
   },
 };
 
