@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, ThemeProps } from "styled-components";
 import { LanguageLocale } from "../../config/constants";
 
 const GlobalStyle = createGlobalStyle`
@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: inherit
+  color: inherit;
 }
 
 html {
@@ -16,6 +16,8 @@ html {
 
 body {
   margin: 0;
+  background: ${(props: ThemeProps<typeof baseTheme>) =>
+    props.theme.colors.background};
 }
 
 main {
@@ -182,28 +184,30 @@ template {
 const baseTheme = {
   colors: {
     primary: "#72BDA3",
-    typography: "#2e3440"
+    primaryDark: "#507972",
+    primaryLight: "#89BEAD",
+    typography: "#2e3440",
+    background: "#eceff4",
   },
-}
+};
 
 const ltrTheme = {
   ...baseTheme,
   flex: {
-    direction: "row"
-  }
+    direction: "row",
+  },
 };
 
 const rtlTheme = {
   ...baseTheme,
   flex: {
-    direction: "row-reverse"
-  }
-}
+    direction: "row-reverse",
+  },
+};
 
 const theme = (languageLocale: LanguageLocale) => {
   if (languageLocale === LanguageLocale.Hebrew) return rtlTheme;
   return ltrTheme;
-}
-
+};
 
 export { GlobalStyle, theme };

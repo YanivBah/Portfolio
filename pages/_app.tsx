@@ -11,8 +11,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <GlobalStyle />
       <ThemeProvider theme={theme(language)}>
+        <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
