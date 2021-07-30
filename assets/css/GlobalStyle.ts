@@ -178,11 +178,26 @@ template {
 
 `;
 
-const theme = {
+const baseTheme = {
   colors: {
     primary: "#72BDA3",
     typography: "#2e3440"
   },
+}
+
+
+const theme = {
+  ...baseTheme,
+  flex: {
+    direction: "row"
+  }
 };
 
-export { GlobalStyle, theme };
+const hebrewTheme = {
+  ...baseTheme,
+  flex: {
+    direction: "row-reverse"
+  }
+}
+
+export { GlobalStyle, theme, hebrewTheme };

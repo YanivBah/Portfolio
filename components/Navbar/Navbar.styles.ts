@@ -12,7 +12,7 @@ export const NavbarContainer = styled.nav`
 
 export const Links = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props) => props.theme.flex.direction};
   font-size: 22px;
 `;
 
@@ -20,7 +20,6 @@ export const ATag = styled.a`
   font-size: 18px;
   margin: 4px 15px;
   text-decoration: none;
-  border-bottom: 1px white solid;
   position: relative;
   padding: 2px;
   color: ${(props) => props.theme.colors.typography};
@@ -47,7 +46,6 @@ export const CurrentATag = styled.a`
 font-size: 18px;
   margin: 4px 15px;
   text-decoration: none;
-  border-bottom: 1px white solid;
   position: relative;
   padding: 2px;
   color: ${(props) => props.theme.colors.primary};
