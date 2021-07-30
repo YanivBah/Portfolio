@@ -188,6 +188,8 @@ const baseTheme = {
     primaryLight: "#89BEAD",
     typography: "#2e3440",
     background: "#eceff4",
+    backgroundDark: "#DBDEE4",
+    backgroundLight: "#F4F5FA",
   },
 };
 

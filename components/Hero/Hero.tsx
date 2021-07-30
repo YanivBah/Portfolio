@@ -26,20 +26,13 @@ export default function Hero() {
         </Header>
         <SubHeader>
           I enjoy turning complex problems into simple and beautiful. <br />
-          When I&apos;m not coding, you&apos;ll find me traveling, photographing
-          or working out in the park.
+          When I&apos;m not coding, you&apos;ll find me hiking, photographing or
+          doing geeky stuff.
         </SubHeader>
       </HeroTypographyContainer>
 
       <PortraitContainer loaded={imageLoaded}>
-        <Image
-          src={profilePic}
-          alt="Picture of me"
-          onLoad={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.src.indexOf("data:image/gif;base64") < 0 && handleLoad();
-          }}
-        />
+        <Image src={profilePic} alt="Picture of me" onLoad={handleLoad} />
       </PortraitContainer>
     </HeroContainer>
   );
