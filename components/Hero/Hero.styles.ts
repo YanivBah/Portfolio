@@ -49,7 +49,7 @@ export const PortraitContainer = styled.div<{ loaded: boolean }>`
 
   & div:last-child {
     transform: scaleX(-1) translateY(500px);
-    animation: ${slideToTop} 1s linear forwards;
+    animation: ${slideToTop} 1s ease-out forwards;
 
     & img {
       max-height: 600px;

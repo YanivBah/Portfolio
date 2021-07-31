@@ -41,34 +41,14 @@ export const SkillContainer = styled.div`
   align-items: center;
 `;
 
-export const LeftSideContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 20px;
-  width: 110px;
-`;
-
 export const SkillIconContainer = styled.div<{ background: string }>`
-  padding: 15px;
-  border-radius: 40% 60% 67% 33% / 50% 39% 61% 50%;
+  padding: 12px;
+  border-radius: 50%;
   background: ${(props) => props.theme.colors.typography};
-  margin-bottom: 7px;
+  z-index: 2;
   & svg {
     filter: saturate(5) contrast(1);
     border-radius: 20%;
-  }
-`;
-
-export const SkillName = styled.p`
-  display: inline-block;
-  color: ${(props) => props.theme.colors.typography};
-  font-size: 20px;
-  font-weight: 200;
-
-  @media (max-width: 600px) {
-    font-size: 16px;
-    padding: 3px 8px;
   }
 `;
 
@@ -76,11 +56,6 @@ export const progressIncrease = (percents: number) => keyframes`
     0% {
         width: 0;
     }
-
-    /* 80% {
-        width: 100%;
-    } */
-
     100% {
         width: ${percents}%
     }
@@ -89,13 +64,28 @@ export const progressIncrease = (percents: number) => keyframes`
 export const SkillProgressContainer = styled.div`
   width: 100%;
   height: 22px;
-  outline: 1px solid white;
-  /* background: ${(props) => props.theme.colors.background}; */
+  outline: 1px solid ${(props) => props.theme.colors.typography};
+  transform: translateX(-13px);
+  z-index: 1;
+  border-radius: 10px;
 `;
 
-export const SkillProgress = styled.div<{ percents: number }>`
-  background: ${(props) => props.theme.colors.background};
+export const SkillProgress = styled.div<{ percents: number; name: string }>`
+  background: ${(props) => props.theme.colors.typography};
   height: 22px;
   width: 0;
-  animation: ${(props) => progressIncrease(props.percents)} 1s linear forwards;
+  border-radius: 10px;
+  animation: ${(props) => progressIncrease(props.percents)} 2s ease-in-out
+    forwards;
+  position: relative;
+
+  &::after {
+    content: "${(props) => props.name}";
+    color: ${(props) => props.theme.colors.primaryLight};
+    position: absolute;
+    left: 15px;
+    font-size: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 `;

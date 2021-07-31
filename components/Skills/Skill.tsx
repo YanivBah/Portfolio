@@ -1,9 +1,7 @@
 import {
   SkillContainer,
-  SkillName,
   SkillProgress,
   SkillProgressContainer,
-  LeftSideContainer,
   SkillIconContainer,
 } from "./Skills.styles";
 
@@ -20,14 +18,11 @@ export default function Skill({
 }) {
   return (
     <SkillContainer>
-      <LeftSideContainer>
-        <SkillIconContainer background={"#ffffff"}>
-          <Icon width={30} fill={color} />
-        </SkillIconContainer>
-        <SkillName>{name}</SkillName>
-      </LeftSideContainer>
+      <SkillIconContainer background={"#ffffff"}>
+        <Icon width={30} fill={color} />
+      </SkillIconContainer>
       <SkillProgressContainer>
-        <SkillProgress percents={percents} />
+        <SkillProgress percents={percents} name={name} />
       </SkillProgressContainer>
     </SkillContainer>
   );
