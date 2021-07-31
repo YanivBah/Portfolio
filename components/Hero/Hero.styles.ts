@@ -2,6 +2,7 @@ import styled, { keyframes, css } from "styled-components";
 
 export const HeroContainer = styled.header`
   width: 100%;
+  overflow: hidden;
   margin: 0 auto;
   padding: 100px 6vw 0 6vw;
   display: flex;
@@ -35,24 +36,16 @@ const slideToTop = keyframes`
 `;
 
 export const PortraitContainer = styled.div<{ loaded: boolean }>`
-  height: 300px;
-
   overflow: hidden;
   transition: height 1.5s;
   position: relative;
   margin: 0 auto;
+  min-height: 350px;
+  max-height: 420px;
   @media (max-width: 880px) {
     margin: 0 0 0 auto;
     width: fit-content;
   }
-
-  ${(props) =>
-    props.loaded &&
-    css`
-      &:hover {
-        height: 380px;
-      }
-    `}
 
   & div:last-child {
     transform: scaleX(-1) translateY(500px);

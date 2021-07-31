@@ -24,13 +24,13 @@ export const SkillsGrid = styled.div`
 
 export const SkillsHeader = styled.h2`
   text-align: center;
-  font-size: 30px;
-  color: ${(props) => props.theme.colors.backgroundLight};
+  font-size: 35px;
+  color: ${(props) => props.theme.colors.typography};
   padding-top: 30px;
 `;
 
 export const SkillsSubHeader = styled.p`
-  color: ${(props) => props.theme.colors.backgroundLight};
+  color: ${(props) => props.theme.colors.typography};
   text-align: center;
   padding: 10px 6vw 30px 6vw;
 `;
@@ -41,21 +41,34 @@ export const SkillContainer = styled.div`
   align-items: center;
 `;
 
-export const SkillName = styled.div`
-  width: 180px;
+export const LeftSideContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  width: 110px;
+`;
 
-  & p {
-    display: inline-block;
-    color: ${(props) => props.theme.colors.primaryDark};
-    background: ${(props) => props.theme.colors.background};
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 20px;
+export const SkillIconContainer = styled.div<{ background: string }>`
+  padding: 15px;
+  border-radius: 40% 60% 67% 33% / 50% 39% 61% 50%;
+  background: ${(props) => props.theme.colors.typography};
+  margin-bottom: 7px;
+  & svg {
+    filter: saturate(5) contrast(1);
+    border-radius: 20%;
+  }
+`;
 
-    @media (max-width: 600px) {
-      font-size: 16px;
-      padding: 3px 8px;
-    }
+export const SkillName = styled.p`
+  display: inline-block;
+  color: ${(props) => props.theme.colors.typography};
+  font-size: 20px;
+  font-weight: 200;
+
+  @media (max-width: 600px) {
+    font-size: 16px;
+    padding: 3px 8px;
   }
 `;
 
