@@ -3,6 +3,7 @@ import Head from "next/head";
 import Hero from "../components/Hero/Hero";
 import Navbar from "../components/Navbar/Navbar";
 import Skills from "../components/Skills/Skills";
+import ProjectsShowcase from "../components/ProjectsShowcase/ProjectsShowcase";
 // import { LanguageLocale } from "../config/constants";
 // import { setLanguage } from "../redux/actions/language";
 
@@ -19,6 +20,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Skills />
+      {/* <ProjectsShowcase /> */}
 
       {/* <button onClick={() => dispatch(setLanguage(LanguageLocale.Hebrew))}>
         Click Me To Test
