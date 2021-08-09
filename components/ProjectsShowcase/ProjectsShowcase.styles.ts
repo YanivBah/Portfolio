@@ -8,13 +8,17 @@ export const ProjectsShowcaseContainer = styled.section`
 
 export const Header = styled.h2`
   font-size: 35px;
-  padding-top: 30px;
+  color: ${(props) => props.theme.colors.typography};
+  padding: 30px 0;
 `;
 
 export const CardsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 50px;
+  @media (max-width: 920px) {
+    flex-direction: column;
+  }
 `;
 
 export const Card = styled.div`
@@ -27,9 +31,9 @@ export const Card = styled.div`
 
 export const CardImage = styled.img`
   width: 100%;
-  height: 300px;
+  max-height: 250px;
   border-radius: 10px 10px 0 0;
-  object-fit: fill;
+  object-fit: cover;
 `;
 
 export const CardTypography = styled.div``;
@@ -44,6 +48,7 @@ export const CardHeader = styled.h4`
 export const CardDescription = styled.p`
   color: ${(props) => props.theme.colors.background};
   font-weight: 300;
+  margin-bottom: 20px;
 `;
 
 export const CardLink = styled.a`
